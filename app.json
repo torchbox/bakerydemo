@@ -6,7 +6,10 @@
   "env": {
     "DJANGO_DEBUG": "off",
     "DJANGO_SETTINGS_MODULE": "bakerydemo.settings.production",
-    "DJANGO_SECURE_SSL_REDIRECT": "on"
+    "DJANGO_SECURE_SSL_REDIRECT": "on",
+    "AWS_STORAGE_BUCKET_NAME": "hello",
+    "AWS_ACCESS_KEY_ID": "hello",
+    "AWS_SECRET_ACCESS_KEY": "hello"
   },
   "scripts": {
     "postdeploy": "django-admin.py migrate && django-admin.py load_initial_data && echo 'from wagtail.images.models import Rendition; Rendition.objects.all().delete()' | django-admin.py shell"
